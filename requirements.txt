@@ -44,8 +44,8 @@ googleapis-common-protos
 gunicorn
 horillasetup
 html5lib
-Jinja2
 idna
+Jinja2
 lxml
 numpy
 oauthlib
@@ -85,8 +85,8 @@ webencodings
 Whoosh
 xhtml2pdf
 XlsxWriter
-gunicorn
 psycopg2-binary
 whitenoise
 django-storages
 boto3
+dj-database-url
