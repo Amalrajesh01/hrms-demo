@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     "payroll",
     "widget_tweaks",
     "django_apscheduler",
+    'storages',
 ]
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 
@@ -168,8 +169,17 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+# MEDIA_URL = "/media/"
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+
+AWS_ACCESS_KEY_ID = "AKIA43KGJ42JDWO3RFON"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "horilla-hrms-files"
+AWS_S3_REGION_NAME = "ap-south-1"
+AWS_S3_ADDRESSING_STYLE = "virtual"
+DEFAULT_FILE_STORAGE = "horilla.storage_backends.PrivateMediaStorage"
+MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com/media/"
+MEDIA_ROOT = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com/media/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -245,3 +255,9 @@ if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+
+# AWS S3 SETTINGS
+
+
+

@@ -44,7 +44,7 @@ SUBMENUS = [
         "redirect": reverse("view-reimbursement"),
     },
     {
-        "menu": trans("Federal Tax"),
+        "menu": trans("Provident Fund"),
         "redirect": reverse("filing-status-view"),
         "accessibility": "payroll.sidebar.federal_tax_accessibility",
     },
